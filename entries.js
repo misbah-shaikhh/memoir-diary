@@ -250,7 +250,7 @@ async function fetchNotes() {
 
   if (!token) {
     alert("You need to log in first!");
-    window.location.href = "welcome.html";
+    window.location.href = "index.html";
     return;
   }
 

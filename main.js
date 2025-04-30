@@ -65,7 +65,7 @@ if (logoutBtn) {
   logoutBtn.addEventListener("click", () => {
     localStorage.removeItem("token");
     localStorage.removeItem("email");
-    window.location.href = "welcome.html";
+    window.location.href = "index.html";
   });
 }
 
