@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Main - Memoir</title>
+  <link rel="stylesheet" href="main.css">
+  <script type="module" src="main.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inika&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Junge&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Mate&display=swap" rel="stylesheet">
+
+</head>
+<body class="light">
+    <div id="user-email">username@email.com</div>
+  <div class="container">
+    <section class="profile-section">
+      <div class="pfp-container">
+        <img id="profile-pic" src="default.jpg" alt="Profile Picture">
+        <!-- <label for="upload-pfp" class="upload-label">Upload Profile Picture</label> --> 
+        <input type="file" id="upload-pfp" accept="image/*">
+        <textarea id="user-bio" placeholder="Enter your mood / bio..."></textarea>
+      <button id="save-bio">Save</button>
+      </div> 
+      <section class="menu">
+        <button id="write-btn">WRITE</button>
+        <button onclick="location.href='entries.html'">ENTRIES</button>
+        <button onclick="location.href='entries.html'">FAVORITES</button>
+        <button onclick="window.location.href='settings.html'">SETTINGS</button>
+        <button id="logout-btn">LOG OUT</button>
+      </section>
+    </section>
+
+      <div class="theme-toggle">
+        <button id="light-theme">LIGHT</button>
+        <button id="dark-theme">DARK</button>
+      </div>
+      </div>
+</body>
+</html>

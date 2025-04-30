@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Entries</title>
+  <link rel="stylesheet" href="entries.css" />
+  <script src="loadUser.js"></script>
+
+</head>
+<body class="light-theme">
+  <div class="container">
+    <!-- Sidebar -->
+<aside class="sidebar">
+    <div class="profile">
+      <img src="default.jpg" alt="Profile" class="profile-pic">
+      <p class="username">@username</p>
+    </div>
+  
+    <button class="sidebar-btn" onclick="location.href='main.html'">Navigation</button>
+    <button class="sidebar-btn" onclick="location.href='write.html'">Write</button>
+    <button class="sidebar-btn" onclick="location.href='entries.html'">Favorites</button>
+    <button class="sidebar-btn" onclick="location.href='settings.html'">Settings</button>
+    <button class="sidebar-btn" onclick="location.href='welcome.html'">Log Out</button>
+  
+    <div class="stars">
+      <div class="star black">Dark Theme</div>
+      <div class="star white">Light Theme</div>
+    </div>
+  </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="top-bar">
+        <div class="search"> <input type="text" placeholder="Search" class="search-bar"> </div>
+        <button onclick="location.href='archives.html'" class="archive-btn">Archive</button>
+        <button class="start-delete">Delete</button>
+        <button id="select-all" style="display: none;">Select All</button>
+        <button id="cancel-delete" style="display: none;">Cancel</button>
+        <button id="delete-selected" style="display: none;">Delete Selected</button>
+      </div>
+      <div class="note-modal" id="note-modal">
+        <div class="note-modal-content">
+          <span class="close-modal" id="close-modal">&times;</span>
+          <h2 id="modal-title"></h2>
+          <!-- Change <p> to <div> here -->
+          <div id="modal-body"></div>
+        </div>
+      </div>
+
+      <section class="favorites-section">
+        <h2>Favorites</h2>
+        <div class="entries-grid" id="favorites">
+          <!-- Favorite notes will appear here -->
+        </div>
+      </section>
+
+      <section class="others-section">
+        <h2>Others</h2>
+        <div class="entries-grid" id="others">
+          <!-- Other notes will appear here -->
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Delete Confirmation Modal -->
+  <div class="modal hidden" id="delete-modal">
+    <div class="modal-content">
+      <p> Are you sure you want to delete the selected notes? </p>
+      <button id="confirm-delete">Yes</button>
+      <button id="cancel-delete">Cancel</button>
+    </div>
+  </div>
+
+  <script src="entries.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!-- write.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WRITE</title>
+  <link href="https://fonts.googleapis.com/css2?family=Junge&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="write.css">
+  <script src="loadUser.js"></script>
+
+</head>
+<body>
+  <div class="container">
+    <!-- Left Sidebar -->
+    <div class="sidebar left">
+      <img src="default.jpg" alt="Profile Picture">
+      <p class="username">@username</p>
+    <button onclick="window.location.href='main.html'">Navigation</button> 
+      <button onclick="window.location.href='entries.html'">Entries</button>
+      <button onclick="window.location.href='entries.html'">Favorites</button>
+      <button onclick="window.location.href='settings.html'">Settings</button>
+      <button onclick="window.location.href='welcome.html'">Log Out</button>
+      <div class="stars">
+        <div class="star black">Dark Theme</div>
+        <div class="star white">Light Theme</div>
+      </div>
+    </div>
+
+    <!-- Middle Editor -->
+        <div id="textInput" contenteditable="true" class="editor-box"></div>
+   
+    <!-- Right Sidebar -->
+    <div class="sidebar right">
+      <div class="edit-tools">
+        <!-- Font weight -->
+        <select id="fontWeight">
+            <option value="'Junge', serif">Junge</option>
+            <option value="Arial, sans-serif">Arial</option>
+            <option value="'Times New Roman', serif">Times New Roman</option>
+            <option value="'Courier New', monospace">Courier New</option>
+            <option value="Georgia, serif">Georgia</option>
+            <option value="Verdana, sans-serif">Verdana</option>
+        </select>
+
+        <!-- List style -->
+        <br> <select id="listStyle">
+          <option value="none">List</option>
+          <option value="ul">Bullet</option>
+          <option value="ol">Number</option>
+        </select>
+
+        <!-- Color picker -->
+        <input type="color" id="textColor" value="#000000">
+
+        <!-- Text style buttons -->
+        <div class="row">
+            <button data-command="bold"><b> B </b></button>
+            <button data-command="italic"> <i> I </i></button>
+            <button data-command="underline"><u> U </u></button>
+            <button data-command="strikeThrough"><s> S </s></button>
+            
+        </div>
+
+        <!-- Alignment buttons -->
+        <div class="row">
+          <button onclick="format('left')">&#8676;</button>
+          <button onclick="format('center')">&#8596;</button>
+          <button onclick="format('right')">&#8677;</button>
+        </div>
+
+        <!-- Highlight Controls -->
+        <div class="highlight-controls" >
+        <input type="color" id="highlightColor" value="#ffff00">
+        </div>
+        <div class="highlighter"> 
+        <button id="highlightBtn">Highlight</button>
+        <button id="stopHighlightBtn">Remove Highlight</button>
+        </div>
+        
+
+      <!-- Action buttons -->
+      <button class="action save-note">Save</button>
+      <button class="action archive-btn" id="archive-note-btn">Archive</button>
+      <button class="action" onclick="location.reload();">Refresh</button>
+    </div>
+  </div>
+
+  <script src="write.js"></script>
+</body>
+</html>

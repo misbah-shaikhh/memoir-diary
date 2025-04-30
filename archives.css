@@ -1,0 +1,581 @@
+/* entries.css */
+
+body {
+    margin: 0;
+    font-family: 'Junge', sans-serif;
+    background-color: #fefefe;
+    color: #333;
+  }
+  
+  .container {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .sidebar {
+    width: 220px;
+    background-color: #f2cfd6;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    position: fixed;
+    left: 0;
+    top: 10px;
+    bottom: 0;
+    width: 350px;
+    padding: 10px;
+    background-color: #E2B4C1;
+  }
+  
+  .sidebar img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .sidebar .username {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    font-family: "junge", serif;
+  }
+  
+  .sidebar button {
+    display: block;
+    width: 100%;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid black;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: 'Junge', serif;
+    font-weight: bold;
+  }
+  
+
+  .stars {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px;
+    gap: 10px;
+    height: 100px;
+  }
+  .star {
+    position: relative;
+    z-index: 10;
+  }
+  .star {
+    font-size: 18px;
+    width: 48%;
+    text-align: center;
+    background: #fff;
+    padding: 8px;
+    border: 1px solid black;
+    align-content: center;
+    font-family: 'Junge', serif;
+    cursor: pointer;
+  user-select: none;
+  }
+
+  .white.star {
+    background-color: white;
+    color: black;
+    border: 1px solid white;
+  }
+
+  .black.star {
+    background-color: #000;
+    color: #fff;
+    border: 1px solid black;
+  }
+
+  .main-content {
+    margin-left: 360px;
+    flex-grow: 1;
+    padding: 1rem;
+    overflow-y: auto;
+    border: 1px solid black;
+    margin-top: 10px;
+    font-family: 'Junge', serif;
+  }
+  
+  .header-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .top-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 1rem;
+  }
+  
+  /* Keep your original styling but remove fixed width so it can grow naturally */
+  .search {
+    background-color: #deb1b9;
+    padding: 10px;
+    border: 1px solid black;
+    flex-grow: 1;
+  }
+  
+  .search-bar {
+    width: 900px;
+    padding: 15px;
+    border-radius: 4px;
+    border: 1px solid black;
+  }
+  
+  button.entries-btn,
+  button.start-delete {
+    background-color: #deb1b9;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 20px;
+    width: 150px;
+    border: 1px solid black;
+    font-family: 'Junge', serif;
+  }
+  
+  .archives-section {
+    margin-bottom: 2rem;
+  }
+  
+  .section-title {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .notes-grid {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .note-card:hover {
+    transform: scale(1.05); /* Slight hover effect */
+  }
+  
+  .note-card {
+    background-color: #dbb5b9;
+    width: 200px;
+    padding: 1rem;
+    border-radius: 5px;
+    position: relative;
+  }
+  
+
+  .note-title {
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    font-family: 'Junge', serif;
+  }
+  
+  .note-body {
+    font-size: 14px;
+    margin-bottom: 12px;
+    font-family: 'Junge', serif;
+  }
+  
+  
+  .delete-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: none;
+    z-index: 10;
+  }
+  
+  .delete-modal.active {
+    display: block;
+  }
+  
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    z-index: 5;
+  }
+  
+  .overlay.active {
+    display: block;
+  }
+
+  /* Theme toggling*/ 
+  body.dark {
+    background-color: #000;
+    color: #fff;
+  }
+
+  body.dark .main-content{
+    border: 1px solid white; 
+  }
+
+  body.dark button, 
+  body.dark .search-bar{
+    background-color: #020E1E; /* dark navy */
+    color: #ffffff;
+    border: 1px solid white;
+  }
+ body.dark .sidebar, 
+ body.dark .search, 
+ body.dark .entries-btn, 
+ body.dark .start-delete{
+    background-color: #102B53;
+    color: #ccc;
+    border: 1px solid white;
+ }
+
+ body.dark .star.black{
+    color: white;
+    border: 1px solid white;
+ }
+
+ body.light .star.white{
+    border: 1px solid black; 
+ }
+
+ .archives-grid {
+  display: flex;
+  flex-wrap: wrap; /* Allows wrapping to new rows */
+  gap: 1rem; /* Adds space between notes */
+  overflow-x: auto; /* Enables horizontal scroll when there are more columns */
+  margin-bottom: 2rem;
+  padding: 10px;
+  max-height: 100%;
+}
+
+.note-card {
+  background-color: #dbb5b9;
+  width: calc(33.33% - 1rem);
+  padding: 1rem;
+  border-radius: 5px;
+  position: relative;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  border: 1px solid black;
+}
+
+body.dark .note-card{
+  background-color: #102B53;
+  color: #fff;
+  border: 1px solid white;
+}
+
+.archives-grid::-webkit-scrollbar {
+  height: 8px; /* Set height for horizontal scrollbar */
+}
+
+.archives-grid::-webkit-scrollbar-thumb {
+  background-color: #ccc; /* Color of scrollbar */
+  border-radius: 4px;
+}
+
+.archives-grid::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Track color */
+}
+
+/* Ensure lists are displayed with indentation */
+ul, ol {
+  padding-left: 20px;
+}
+
+ul li, ol li {
+  margin-bottom: 5px;
+  list-style-position: inside; /* Ensures list markers are inside the list item */
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+/* In entries.css or modal.css */
+
+/* Ensure the modal content doesn't hide list styles */
+.note-modal-content ul, .note-modal-content ol {
+  padding-left: 20px;
+}
+
+.note-modal-content ul li, .note-modal-content ol li {
+  margin-bottom: 8px;
+}
+
+.note-checkbox {
+  display: inline-block !important;
+  width: 10px;
+  height: 10px;
+}
+
+
+
+/* Transition for opening modal */
+.note-modal-content {
+  transition: transform 0.3s ease-in-out;
+}
+
+body.dark .note-modal-content{
+  background-color: #102B53;
+  color: white;
+  border: 1px solid white;
+}
+
+/* Modal container (background overlay) */
+.note-modal {
+  display: none; /* Initially hidden */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* Dark transparent background */
+  z-index: 1000; /* Ensure it's on top of other content */
+  align-items: center;
+  justify-content: center;
+}
+
+/* Modal content (the actual modal box) */
+.note-modal-content {
+  background-color: #deb1b9;
+  padding: 30px;
+  border-radius: 8px;
+  max-width: 80%; /* Adjust modal width */
+  max-height: 80%; /* Adjust modal height */
+  overflow-y: auto; /* Allows scrolling if content is too long */
+  border: 1px solid #ccc;
+  font-family: 'Junge', serif;
+  color: #333;
+  position: relative;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Close button (top-right) */
+.close-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  color: #333;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.close-modal:hover {
+  color: #f00; /* Red on hover */
+}
+
+/* Modal title */
+#modal-title {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+/* Modal body (note content) */
+#modal-body {
+  font-size: 1rem;
+  line-height: 1.5;
+  white-space: pre-wrap; /* Preserve newlines in note body */
+  color: black;
+  overflow-y: auto;
+  flex-grow: 1; /* Allow body to grow and take up available space */
+}
+
+/* Adjust for dark theme */
+body.dark .note-modal-content {
+  background-color: #102B53;
+  color: #fff;
+  border: 1px solid white;
+}
+
+body.dark .close-modal {
+  color: #fff;
+}
+
+body.dark .close-modal:hover {
+  color: #f00;
+}
+
+body.dark #modal-body{
+  color: white;
+}
+
+/* Responsive styling */
+@media (max-width: 1200px) {
+  .main-content {
+    margin-left: 350px;
+    padding: 0.8rem;
+  }
+
+  .search-bar {
+    width: 500px;
+    padding: 12px;
+  }
+
+  .archive-btn,
+  .start-delete,
+  #select-all,
+  #cancel-delete,
+  #delete-selected {
+    padding: 12px;
+    width: 120px;
+    font-size: 13px;
+  }
+  .archives-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1100px) {
+  .main-content {
+    margin-left: 350px;
+    padding: 0.8rem;
+  }
+
+  .search-bar {
+    width: 400px;
+    padding: 12px;
+  }
+
+  .archive-btn,
+  .start-delete,
+  #select-all,
+  #cancel-delete,
+  #delete-selected {
+    padding: 12px;
+    width: 120px;
+    font-size: 13px;
+  }
+  .archives-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 1000px) {
+  .main-content {
+    margin-left: 5px;
+    padding: 0.8rem;
+  }
+
+  .search-bar {
+    width: 600px;
+    padding: 12px;
+  }
+
+  .archive-btn,
+  .start-delete,
+  #select-all,
+  #cancel-delete,
+  #delete-selected {
+    padding: 12px;
+    width: 120px;
+    font-size: 13px;
+  }
+  .archives-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .sidebar {
+    display: none;
+  }
+}
+
+@media (max-width: 850px) {
+  .search-bar {
+    width: 450px;
+    padding: 12px;
+  }
+
+  .archive-btn,
+  .start-delete,
+  #select-all,
+  #cancel-delete,
+  #delete-selected {
+    padding: 12px;
+    width: 120px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 730px) {
+  .search-bar {
+    width: 450px;
+    padding: 12px;
+  }
+
+  .archive-btn,
+  .start-delete,
+  #select-all,
+  #cancel-delete,
+  #delete-selected {
+    padding: 12px;
+    width: 120px;
+    font-size: 13px;
+  }
+
+  .archives-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .search-bar {
+    width: 90%;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 500px) {
+  .archive-btn,
+  .start-delete,
+  #select-all,
+  #cancel-delete,
+  #delete-selected {
+    padding: 2px;
+    width: 50px;
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .start-delete {
+    display: none;
+  }
+
+  .note-card {
+    width: 90%;
+    margin: 0 auto;
+    justify-content: center;
+  }
+
+  .archives-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #others .note-card {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .note-modal-content {
+    width: 80%;
+  }
+}

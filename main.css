@@ -1,0 +1,449 @@
+body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body.light {
+  background-color: #f8d4dc; /* soft pink */
+  color: #4a4a4a;
+}
+
+body.dark {
+  background-color: #10101a; /* dark navy */
+  color: #ffffff;
+}
+
+body.light .menu button,
+body.light #logout-btn,
+body.light #save-bio,
+body.light .theme-toggle button {
+  background-color: #f4a5b4;
+  color: black;
+  border-radius: 12px;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+body.dark .menu button,
+body.dark #logout-btn,
+body.dark #save-bio,
+body.dark .theme-toggle button {
+  background-color: black;
+  color: #eee;
+  border-radius: 12px;
+  font-weight: bold;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+}
+
+body.dark {
+  background-color: black;
+}
+
+body.dark #user-bio, 
+body.dark .upload-label, 
+body.dark .pfp-container,
+body.dark #profile-pic {
+  background-color: black;
+  color: white;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+} 
+body.dark .container{
+  background-color: #102B53;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+}
+
+body.dark #profile-pic{
+  border: 4px solid white;
+}
+
+body.dark .menu, 
+body.dark .theme-toggle {
+  background-color: #50698D;
+  box-shadow: 0 1px 4px rgba(255, 255, 255, 0.2);
+}
+
+.container {
+  background: #f4a5b4;
+  padding: 40px;
+  max-width: 700px;
+  width: 100%;
+  height: 550px;
+  margin: 10px auto;
+  border-radius: 20px;
+  border: 2px solid #f4c2c2;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+#user-email {
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: 'Junge', serif;
+  margin-top: 80px;
+  margin-left: 480px;
+}
+
+#logout-btn {
+  padding: 8px 16px;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+}
+
+.profile-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px;
+  margin-bottom: 30px;
+  background-color: transparent;
+  flex-wrap: wrap;
+}
+
+.pfp-container {
+  position: relative;
+  width: 300px;
+  height: 300px; 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+#profile-pic {
+  width: 300px;
+  height: 300px;
+  border: 4px solid #f4a5b4;
+  border-radius: 12px;
+  object-fit: cover;
+  display: block;
+  margin-bottom: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.upload-label, #save-bio {
+  position: absolute;
+  bottom: 10px;
+  padding: 6px 12px;
+  background-color: #ffcce0;
+  color: #333;
+  font-size: 0.85rem;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  border: none;
+}
+
+#save-bio{
+  right: 20px;
+}
+
+#upload-pfp {
+  display: none;
+}
+
+#user-bio {
+  width: 298px;
+  height: 200px;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  padding: 4px;
+  font-family: 'Mate', serif;
+  border: 1px solid #ccc;
+  font-weight: 300px;
+  letter-spacing: 3px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+#save-bio {
+  margin-top: 8px;
+  padding: 6px 12px;
+  background-color: #f6a5c0;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  font-weight: 300px;
+  letter-spacing: 3px;
+  font-family: 'Mate', serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.menu {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 17px;
+  margin-top: 5px;
+  justify-items: center;
+  background-color: #BB8588;
+  padding: 20px 0;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  align-self: flex-start;
+  width: 340px;
+  height: 300px;
+  margin-bottom: 0px;
+}
+
+.menu button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  width: 300px;
+  font-family: 'Mate', serif;
+  font-weight: 300px;
+  letter-spacing: 3px;
+  color: black;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  margin-top: 5px;
+  margin-left: 350px;
+  background-color: #BB8588; 
+  width: 300px;
+  padding: 12px 20px;
+  height: 128px;
+  font-family: 'Mate', serif;
+  font-weight: 300px;
+  letter-spacing: 3px;
+  color: black;
+  max-width: 100%;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle button {
+  margin: 0 10px;
+  padding: 6px 14px;
+  font-size: 0.9rem;
+  border: none;
+  cursor: pointer;
+  width: 200px;
+  height: 110px;
+  background-color: #f4a5b4;
+  color: black;
+  font-family: 'Mate', serif;
+  font-weight: 300px;
+  letter-spacing: 3px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* RESPONSIVE STYLING */
+
+@media (max-width: 1077px) {
+  #user-email {
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;
+    display: block;
+  }
+}
+
+/* RESPONSIVE STYLING */
+@media (max-width: 800px) {
+  /* Stack profile picture, bio, menu, and theme toggle vertically */
+ .container{
+  width: 100%;
+  height: 100%;
+  align-content: center;
+ }
+
+  .profile-section {
+    flex-direction: column; /* Stack vertically */
+    align-items: center;    /* Center-align */
+    gap: 20px;              /* Space between items */
+    justify-content: center;
+  }
+
+  .pfp-container {
+    width: 300px;  /* Adjust width for smaller screens */
+    height: 250px; /* Adjust height for smaller screens */
+  }
+
+  #profile-pic {
+    width: 100%;  /* Full width */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 12px;
+  }
+
+  #user-bio {
+    width: 100%; /* Allow the bio to take up full width */
+    max-width: 320px; /* Max width for readability */
+  }
+
+  #save-bio {
+    width: 50%; /* Full width button */
+    margin-top: 10px;
+    margin-bottom: 0px;
+  }
+
+  /* Adjust the width of the menu and theme toggle */
+  .menu {
+    width: 300px; /* Full width */
+    height: auto; /* Let height adjust based on content */
+    padding: 10px; /* Adjust padding */
+    margin-top: 280px;
+    align-content: center;
+    align-self: center;
+  }
+
+  .menu button {
+    width: 90%;  /* Full width buttons */
+    padding: 10px; /* Adjust button padding */
+  }
+
+  .theme-toggle {
+    width: 300px; /* Full width */
+    flex-direction: column; /* Stack buttons vertically */
+    margin-left: 190px; /* Center the theme toggle */
+    height: auto; /* Let height adjust based on content */
+    padding: 10px; /* Adjust padding */
+    align-self: center;
+    align-content: center;
+  }
+
+  .theme-toggle button {
+    width: 90%;  /* Full width buttons */
+    margin: 10px 0; /* Space between buttons */
+    height: auto;  /* Adjust height */
+    padding: 10px;
+  }
+}
+
+@media (max-width: 700px) {
+  .container{
+    width: 100%;
+    height: 100%;
+    margin-right: 0;
+  }
+  .theme-toggle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 450px) {
+  .container {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  .profile-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+
+  .pfp-container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #profile-pic {
+    width: 150px; /* Smaller profile picture for mobile */
+    height: 150px;
+  }
+
+  #user-bio {
+    width: 100%;
+    height: auto;
+    max-width: 300px; /* Ensures bio text area doesn't stretch too much */
+    margin-top: 6px;
+    height: 80px;
+    font-size: 0.9rem;
+    border-radius: 8px;
+    padding: 4px;
+    font-family: 'Mate', serif;
+    border: 1px solid #ccc;
+    font-weight: 300px;
+    letter-spacing: 3px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+    margin-left: 5px;
+  }
+
+  #save-bio {
+    margin-top: 8px;
+    padding: 6px 12px;
+    background-color: #f6a5c0;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    font-family: 'Mate', serif;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: auto;
+  }
+
+  .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 15px 0;
+    background-color: #BB8588;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+  }
+
+  .menu button {
+    width: 100%;
+    max-width: 300px;
+    margin: 5px 0;
+  }
+
+  .theme-toggle {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    margin-top: 20px;
+    background-color: #BB8588;
+    width: 100%;
+    max-width: 300px;
+    padding: 12px 20px;
+  }
+
+  .theme-toggle button {
+    margin: 0 10px;
+    padding: 6px 14px;
+    font-size: 0.9rem;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    max-width: 200px;
+    background-color: #f4a5b4;
+    color: black;
+    font-family: 'Mate', serif;
+    font-weight: 300;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  #logout-btn {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  #user-email{
+    font-size: 20px;
+  }
+}

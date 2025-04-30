@@ -1,0 +1,233 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to bottom, #eacdf1, #cfc4f1);
+    color: #333;
+    padding: 0;
+    background-image: url('memoir-bg.jpg'); /* replace with your actual image path */
+    background-repeat: repeat-y;
+    background-size: cover; /* full width, height adjusts */
+    background-attachment: scroll;
+    background-position: top center;
+    position: relative;
+  }
+  
+  .containerh1{
+    max-width: 100%;
+    z-index: 1000;
+  }
+
+  .logo {
+    position: relative;
+    top: 390px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Modern Antiqua', serif;
+    font-size: 100px;
+    color: white;
+    z-index: 1000;
+    background-color: rgba(93, 89, 107, 0.7);
+    width: 100%;
+    text-align: center;
+  }
+  
+  .about {
+    margin-top: 820px; /* adjust as needed */
+    padding: 2rem;
+    top: 1813px;
+    /*background: rgba(255, 255, 255, 0.1); /* optional styling */
+    border-radius: 10px;
+    color: #333; 
+    padding: 30px;
+    padding-top: 20px;
+    margin-bottom: 280px;
+  }
+
+  .about div {
+    margin-top: 80px;
+    margin-left: 80px;
+    color: black;
+    background-color: #B691FB;
+    text-align: center;
+    width: 30%;
+    padding: 30px;
+    border: 2px solid black;
+    border-radius: 10px;
+    font-size: 50px;
+    font-family: 'Instrument Serif', serif;
+
+  }
+
+  .about p {
+    font-size: 30px;
+    padding: 20px;
+    text-align: center;
+    font-family: 'Inika', serif;
+    font-weight: bold;
+    margin-top: 80px;
+  }
+
+
+  .login-section {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 0 90px #caa0ff;
+    gap: 2rem;
+    padding: 30px;
+    width: 60%;
+    margin-top: 280px;
+    margin-left: 240px;
+  }
+  
+  .login-image img {
+    width: 250px;
+    border-radius: 1rem;
+    box-shadow: 0 0 10px #dbbdfc;
+  }
+  
+  .login-form {
+    flex: 1;
+    min-width: 150px;
+    text-align: left;
+  }
+  
+  .login-form h3 {
+    font-size: 1.2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+  }
+  
+  .register-btn {
+    background-color: #a779e9;
+    border: none;
+    padding: 12px;
+    color: white;
+    font-size: 0.8em;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .login-form input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 2px solid #c3a7f5;
+    border-radius: 5px;
+    background: #fdf5ff;
+  }
+  
+  .login-form button {
+    background-color: #8b57c6;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 70%;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  #auth-button{
+    width: 100%;
+  }
+
+  .login-form button:hover {
+    background-color: #6d3fb3;
+  }
+  
+  footer {
+    margin-top: 2rem;
+    font-size: 0.9em;
+    color: #555;
+    padding: 50px;
+    text-align: center;
+  }
+  
+  .socials img {
+   width: 20px;
+   height: 20px;
+  }
+  
+/* RESPONSIVE STYLING */
+@media (max-width: 972px) {
+  .login-section {
+    flex-direction: column;
+    width: 80%;
+    margin: 100px auto 0 auto; /* Center it and adjust top margin */
+    padding: 20px;
+    justify-items: center;
+  }
+
+  .login-image {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .login-image img {
+    width: 280px;
+  }
+
+  .login-form {
+    width: 100%;
+    padding: 0;
+    text-align: center;
+  }
+
+  .login-form h3 {
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 0;
+  }
+
+  .login-form input,
+  .login-form button {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .register-btn {
+    width: 100%;
+  }
+
+  #auth-form input{
+  margin-right: 10px;
+  width: 90%;
+  justify-content: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .logo {
+    font-size: 50px; /* reduce logo size */
+    top: 300px;       /* optional: shift it up for better spacing */
+  }
+
+  .about div {
+    width: 90%;       /* make it take nearly full width */
+    margin: 20px auto; /* center it with auto and reduce margin */
+    font-size: 28px;  /* reduce text size */
+    padding: 20px;    /* slightly smaller padding */
+  }
+
+  .about p{
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .about div {
+    width: 90%;       /* make it take nearly full width */
+    margin: 20px auto; /* center it with auto and reduce margin */
+    font-size: 36px;  /* reduce text size */
+    padding: 20px;    /* slightly smaller padding */
+  }
+}

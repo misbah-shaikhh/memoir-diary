@@ -1,0 +1,294 @@
+/* write.css */
+body {
+    margin: 0;
+    font-family: 'Junge', serif;
+    background-color: #E4B0B3;
+    color: #000;
+  }
+  
+  .container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  .sidebar {
+    width: 220px;
+    background-color: #f2cfd6;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid black;
+  }
+  
+  .sidebar.left {
+    position: fixed;
+    left: 0;
+    top: 10px;
+    bottom: 0;
+    width: 350px;
+    padding: 10px;
+    background-color: #E2B4C1;
+  }
+  
+  .sidebar.right {
+    position: fixed;
+    right: 0;
+    top: 10px;
+    bottom: 0;
+    width: 320px;
+    background-color: #E2B4C1;
+    padding: 10px;
+    box-sizing: border-box;
+    font-family: 'Junge', serif;
+  }
+  
+  .sidebar img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  
+  .username {
+    text-align: center;
+    margin: 10px 10px;
+  }
+  
+  .sidebar button, .action {
+    display: block;
+    width: 100%;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid black;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: 'Junge', serif;
+    font-weight: bold;
+  }
+  
+  .stars {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px;
+    gap: 10px;
+    height: 100px;
+  }
+  
+  .star {
+    font-size: 24px;
+    width: 48%;
+    text-align: center;
+    background: #fff;
+    padding: 8px;
+    border: 1px solid black;
+    align-content: center;
+  }
+   .white {
+    background-color: white;
+    color: black;
+    border: 1px solid white;
+  }
+  .black {
+    background-color: #000;
+    color: #fff;
+    border: 1px solid black;
+  }
+  .editor-box {
+    margin-left: 360px;
+    margin-right: 340px;
+    margin-top: 10px;
+    padding: 15px;
+    width: calc(100% - 700px); /* Adjusted for both sidebars */
+    height: 100%;
+    font-size: 16px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 10px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    border: 2px solid black;
+  }
+  
+  
+  .edit-tools button.active {
+    background-color: #ccc;
+  }
+  
+/* Additional styles for new buttons and structure (no existing edits changed) */
+
+.edit-tools .row {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  .edit-tools .row button {
+    flex: 1;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid black;
+    font-family: 'Junge', serif;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 6px;
+  }
+  
+  
+  .action {
+    margin-top: 10px;
+    z-index: 9999;
+  }
+
+  #fontWeight{
+    width: 300px; 
+    height: 30px;
+  }
+  
+  #listStyle{
+    margin-top: 10px;
+    width: 150px;
+    height: 30px;
+  }
+
+  #textColor{
+    margin-top: 10px;
+    width: 100px;
+    height: 30px;
+  }
+
+  .highlighter {
+    display: flex;
+    gap: 10px; /* space between buttons */
+    margin-bottom: 10px; /* optional spacing */
+  }
+  
+  .highlighter button {
+    padding: 6px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+
+  #highlightColor {
+    width: 300px;
+    height: 40px; 
+  }
+
+  /* theme toggling */ 
+
+  body.dark{
+    background-color: #000;
+    color: #fff;
+  }
+
+  body.dark button, 
+  body.dark select, 
+  body.dark .row button{
+    background-color: #020E1E; /* dark navy */
+    color: #ffffff;
+    border: 1px solid white;
+  }
+ body.dark .sidebar.left,
+ body.dark .sidebar.right{
+    background-color: #102B53;
+    color: #ccc;
+ }
+
+ body.dark .star.black{
+    color: white;
+    border: 1px solid white;
+ }
+
+ body.light .star.white{
+    border: 1px solid black; 
+ }
+
+ body.dark .editor-box{
+    border: 2px solid white;
+    background-color: black;
+    color: #ffffff;
+ } 
+
+ body.dark .highlighter button{
+    background-color: #000;
+    color: #fff;
+ }
+
+ @media (max-width: 900px) {
+  .sidebar.left {
+      display: none; /* Hide the left sidebar */
+  }
+
+  .editor-box {
+      margin-left: 5px;
+      margin-right: 330px; /* Keep the space for the right sidebar */
+      width: calc(100% - 320px); /* Adjust for the right sidebar */
+  }
+
+  .sidebar.right {
+      position: fixed;
+      right: 0;
+      top: 10px;
+      bottom: 0;
+      width: 320px;
+      background-color: #E2B4C1;
+      padding: 10px;
+      box-sizing: border-box;
+  }
+
+  /* The container doesn't need to change because the sidebars are fixed */
+  .container {
+      display: flex;
+  }
+}
+
+/* Media Query for Max Width 500px - Slim the Left Sidebar and Adjust Button Sizes */
+@media (max-width: 550px) {
+  /* Slim the left sidebar */
+  .sidebar.right {
+      width: 150px; /* Make the left sidebar more slim */
+      padding: 0px; /* Reduce padding inside the sidebar */
+  }
+
+  /* Adjust button sizes */
+  .sidebar button, .action {
+      padding: 10px; /* Smaller padding */
+      font-size: 12px; /* Smaller font size */
+  }
+
+  /* Adjust the text area width and margins */
+  .editor-box {
+      margin-left: 5px; /* Adjust left margin for the slimmed sidebar */
+      margin-right: 155px; /* Keep the margin for the right sidebar */
+      max-width: 400px; /* Adjust width to account for the slimmed sidebar and right sidebar */
+      width: 400px;
+  }
+
+  /* Optional: Adjust text and elements in the editor box */
+  .editor-box {
+      font-size: 14px; /* Reduce font size for smaller screens */
+  }
+
+  /* Adjust the toolbar buttons (bold, italic, etc.) */
+  .edit-tools .row button {
+      font-size: 12px; /* Smaller font size for toolbar buttons */
+      padding: 8px; /* Smaller padding */
+  }
+
+  .highlighter button {
+      padding: 2px 5px; /* Smaller padding */
+  }
+
+  /* Adjust the height and spacing of elements for the new layout */
+  .highlighter {
+      gap: 5px; /* Reduced gap between buttons */
+  }
+
+  .sidebar.right button, 
+  .sidebar.right select, 
+  .sidebar.right input{
+    width: 90%;
+    margin-left: 2px;
+    margin-right: 2px;
+  }
+}
