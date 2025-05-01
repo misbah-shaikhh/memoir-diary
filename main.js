@@ -16,7 +16,7 @@ window.addEventListener("DOMContentLoaded", async () => {
   }
 
   try {
-    const res = await fetch("http://localhost:5000/api/auth/me", {
+    const res = await fetch("https://memoir-diary.onrender.com/api/auth/me", {
       headers: { Authorization: `Bearer ${token}` },
     });
     const user = await res.json();
@@ -40,7 +40,7 @@ if (saveBioBtn && bioInput) {
     const bio = bioInput.value;
 
     try {
-      const res = await fetch("http://localhost:5000/api/auth/update-bio", {
+      const res = await fetch("https://memoir-diary.onrender.com/api/auth/update-bio", {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

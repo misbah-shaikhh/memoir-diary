@@ -19,8 +19,8 @@ document.getElementById("auth-form").addEventListener("submit", async (e) => {
   }
 
   const url = isLogin
-    ? "http://localhost:5000/api/auth/login"
-    : "http://localhost:5000/api/auth/register";
+    ? "https://memoir-diary.onrender.com/api/auth/login"
+    : "https://memoir-diary.onrender.com/api/auth/register";
 
   try {
     const res = await fetch(url, {
@@ -41,7 +41,7 @@ document.getElementById("auth-form").addEventListener("submit", async (e) => {
       localStorage.setItem("token", data.token);
 
       // Fetch user info using /me endpoint
-      const meRes = await fetch("http://localhost:5000/api/auth/me", {
+      const meRes = await fetch("https://memoir-diary.onrender.com/api/auth/me", {
         headers: {
           Authorization: `Bearer ${data.token}`
         }
@@ -92,7 +92,7 @@ async function saveNote(archived = false) {  // ✅ Default to not archived
   }
 
   try {
-    const response = await fetch("http://localhost:5000/api/auth/save-note", {
+    const response = await fetch("http://:5000/api/auth/save-note", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

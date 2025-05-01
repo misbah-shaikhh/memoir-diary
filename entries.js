@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
 async function deleteNotes(idsToDelete) {
   const token = localStorage.getItem('token');
   try {
-    const response = await fetch('http://localhost:5000/api/auth/delete-notes', {
+    const response = await fetch('https://memoir-diary.onrender.com/api/auth/delete-notes', {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
@@ -169,7 +169,7 @@ async function deleteSingleNote(noteId) {
   if (!confirmDelete) return;
 
   try {
-    const response = await fetch('http://localhost:5000/api/auth/delete-notes', {
+    const response = await fetch('https://memoir-diary.onrender.com/api/auth/delete-notes', {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
@@ -255,7 +255,7 @@ async function fetchNotes() {
   }
 
   try {
-    const response = await fetch('http://localhost:5000/api/auth/notes', {
+    const response = await fetch('https://memoir-diary.onrender.com/api/auth/notes', {
       headers: {
         'Authorization': `Bearer ${token}`
       }
@@ -374,7 +374,7 @@ document.addEventListener('DOMContentLoaded', () => {
 async function toggleFavorite(noteId, isFavorite) {
   const token = localStorage.getItem('token');
   try {
-    const response = await fetch(`http://localhost:5000/api/auth/toggle-favorite/${noteId}`, {
+    const response = await fetch(`https://memoir-diary.onrender.com/api/auth/toggle-favorite/${noteId}`, {
       method: 'PATCH',
       headers: {
         'Authorization': `Bearer ${token}`,

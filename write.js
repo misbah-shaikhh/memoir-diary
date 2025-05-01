@@ -160,7 +160,7 @@ document.getElementById('write-btn')?.addEventListener('click', () => {
     }
   
     try {
-      const response = await fetch("http://localhost:5000/api/auth/save-note", {
+      const response = await fetch("https://memoir-diary.onrender.com/api/auth/save-note", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

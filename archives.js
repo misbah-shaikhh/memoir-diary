@@ -46,7 +46,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   }
 
   try {
-    const response = await fetch("http://localhost:5000/api/auth/archives", {
+    const response = await fetch("https://memoir-diary.onrender.com/api/auth/archives", {
       headers: {
         "Authorization": `Bearer ${token}`,
       }
@@ -158,7 +158,7 @@ async function moveNoteFromArchiveToEntries(noteId) {
   }
 
   try {
-    const res = await fetch(`http://localhost:5000/api/auth/update-note/${noteId}`, {
+    const res = await fetch(`https://memoir-diary.onrender.com/api/auth/update-note/${noteId}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",
@@ -200,7 +200,7 @@ async function deleteNoteFromArchive(noteId) {
   }
 
   try {
-    const res = await fetch(`http://localhost:5000/api/auth/delete-note/${noteId}`, {
+    const res = await fetch(`https://memoir-diary.onrender.com/api/auth/delete-note/${noteId}`, {
       method: "DELETE",
       headers: {
         "Authorization": `Bearer ${token}`
@@ -304,7 +304,7 @@ document.addEventListener('DOMContentLoaded', () => {
 async function deleteNotes(idsToDelete) {
   const token = localStorage.getItem('token');
   try {
-    const response = await fetch('http://localhost:5000/api/auth/delete-notes', {
+    const response = await fetch('https://memoir-diary.onrender.com/api/auth/delete-notes', {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
@@ -350,7 +350,7 @@ async function deleteSingleNote(noteId) {
   if (!confirmDelete) return;
 
   try {
-    const response = await fetch('http://localhost:5000/api/auth/delete-notes', {
+    const response = await fetch('https://memoir-diary.onrender.com/api/auth/delete-notes', {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
@@ -476,7 +476,7 @@ async function fetchNotes() {
   }
 
   try {
-    const response = await fetch("http://localhost:5000/api/auth/archives", {
+    const response = await fetch("https://memoir-diary.onrender.com/api/auth/archives", {
       headers: {
         "Authorization": `Bearer ${token}`,
       }
