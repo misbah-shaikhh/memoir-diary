@@ -269,6 +269,9 @@ async function fetchNotes() {
       favoritesContainer.innerHTML = '';
       othersContainer.innerHTML = '';
       data.forEach(note => {
+        if (note.archived) {
+          return; // Skip archived notes for entries page
+        }
         const noteElement = document.createElement('div');
         noteElement.classList.add('note-card');
       

@@ -36,8 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
   applyTheme(saved);  // Apply the saved theme when the page loads
 });
 
-
-// Fetch archived notes when the page loads
+// Fetch archived notes for the archives page
 document.addEventListener('DOMContentLoaded', async () => {
   const token = localStorage.getItem("token");
   if (!token) {
@@ -54,8 +53,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Check if the response is okay (status 200-299)
     if (!response.ok) {
-      // If response is not ok, handle it and show an error
-      const errorMessage = await response.text(); // Get the response as text
+      const errorMessage = await response.text();
       alert("Error fetching archived notes: " + errorMessage);
       return;
     }
@@ -63,13 +61,11 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Parse the JSON response only if the response was successful
     const archivedNotes = await response.json();
 
-    // Check if there are no archived notes
-    if (archivedNotes.length === 0) {
-      document.getElementById('no-archive-message').style.display = 'block'; // Show "No archived notes" message
-    }
+    // Filter out non-archived notes
+    const filteredArchivedNotes = archivedNotes.filter(note => note.archived);
 
-    // Display the archived notes
-    displayArchivedNotes(archivedNotes);
+    // Display archived notes
+    displayArchivedNotes(filteredArchivedNotes);
 
   } catch (err) {
     console.error(err);
