@@ -25,6 +25,24 @@ const PORT = process.env.PORT || 5000;
 console.log("Starting server on port:", process.env.PORT);
 console.log("Mongo URI defined:", !!process.env.MONGO_URI); // just shows true/false
 
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`)))
-  .catch(err => console.error('Failed to connect to MongoDB:', err.message));
+// mongoose.connect(process.env.MONGO_URI)
+ //  .then(() => app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`)))
+  // .catch(err => console.error('Failed to connect to MongoDB:', err.message));
+
+  mongoose.connect(process.env.MONGO_URI)
+  .then(async () => {
+    console.log("✅ Connected to MongoDB Atlas");
+
+    // 👇 Dummy user to test saving
+    const testUser = new User({ email: "test@live.com", password: "testpass" });
+    await testUser.save()
+      .then(() => console.log("🚀 Dummy user saved to MongoDB Atlas!"))
+      .catch(err => console.log("❌ Error saving user:", err.message));
+
+    app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+  })
+  .catch(err => console.error("❌ Failed to connect to MongoDB:", err.message));
+
+  mongoose.connection.once('open', () => {
+    console.log("✅ Connected to MongoDB Atlas");
+  });
